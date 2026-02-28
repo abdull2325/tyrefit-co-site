@@ -341,102 +341,121 @@ font-size: 16px; font-weight: 600; color: #991B1B;
 
 /* FORM */
 .form-sec {
-padding: 56px 20px;
-background: #0F0F0E;
+padding: 72px 20px;
+background: linear-gradient(180deg, #0F0F0E 0%, #111110 100%);
+position: relative;
 }
-.form-inner { max-width: 520px; margin: 0 auto; }
-.form-sec h2 { color: #ffffff; margin-bottom: 8px; text-align: center; }
-.form-sub { color: #D1D5DB; font-size: 16px; margin-bottom: 14px; line-height: 1.6; text-align: center; }
+.form-sec::before {
+content: '';
+position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+width: 600px; height: 600px;
+background: radial-gradient(circle, rgba(22,163,74,0.06) 0%, transparent 70%);
+pointer-events: none;
+}
+.form-inner { max-width: 480px; margin: 0 auto; position: relative; }
+.form-sec h2 {
+color: #ffffff; margin-bottom: 10px; text-align: center;
+font-size: clamp(28px, 5vw, 38px);
+}
+.form-sub {
+color: #9CA3AF; font-size: 16px; margin-bottom: 24px;
+line-height: 1.65; text-align: center;
+}
 .early-benefit {
-background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);
-border-radius: 10px; padding: 16px 18px; margin-bottom: 28px;
-font-size: 15px; color: #4ADE80; line-height: 1.6; font-weight: 500;
+background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.15);
+border-radius: 12px; padding: 16px 20px; margin-bottom: 32px;
+font-size: 14px; color: #9CA3AF; line-height: 1.65; font-weight: 500;
+text-align: center;
 }
-.early-benefit strong { font-weight: 700; color: #86EFAC; }
+.early-benefit strong { font-weight: 700; color: #4ADE80; display: block; margin-bottom: 4px; font-size: 15px; }
 .form-box {
-background: #ffffff; border: none; border-radius: 16px;
-padding: 32px 24px;
-box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+background: #ffffff; border: none; border-radius: 20px;
+padding: 36px 28px;
+box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 24px 64px rgba(0,0,0,0.3);
 }
-.fg { margin-bottom: 16px; }
-label {
-display:block; font-size: 13px; font-weight: 700;
-color: #374151; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px;
+.fg { margin-bottom: 18px; }
+.form-box label {
+display:block; font-size: 14px; font-weight: 600;
+color: #111827; text-transform: none; letter-spacing: 0; margin-bottom: 7px;
 }
 input, select {
-width:100%; background: #F9FAFB; border: 1.5px solid #D1D5DB;
-border-radius: 8px; padding: 14px 14px;
+width:100%; background: #ffffff; border: 1.5px solid #E5E7EB;
+border-radius: 10px; padding: 15px 16px;
 font-family: 'Inter', sans-serif; font-size: 16px;
 color: #111827; -webkit-text-fill-color: #111827;
-outline:none; transition: border-color 0.15s, box-shadow 0.15s;
+outline:none; transition: border-color 0.2s, box-shadow 0.2s;
 -webkit-appearance:none; appearance:none;
 }
-input:focus, select:focus { border-color: #16A34A; box-shadow: 0 0 0 3px rgba(22,163,74,0.12); }
+input:focus, select:focus { border-color: #16A34A; box-shadow: 0 0 0 3px rgba(22,163,74,0.1); }
 input::placeholder { color: #9CA3AF; -webkit-text-fill-color: #9CA3AF; }
 select option { background: #ffffff; color: #111827; }
-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23374151' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
 
-.submit-wrap { margin-top: 12px; }
+.submit-wrap { margin-top: 16px; }
 .submit-btn {
 width:100%; background: #16A34A; color:#fff;
-border:none; border-radius: 10px; padding: 18px;
+border:none; border-radius: 12px; padding: 18px;
 font-family: 'Inter', sans-serif;
-font-size: 18px; font-weight: 800;
+font-size: 17px; font-weight: 800;
 cursor:pointer; letter-spacing: -0.3px;
-margin-bottom: 10px;
-transition: background 0.15s;
+margin-bottom: 12px;
+transition: background 0.2s, transform 0.1s;
+box-shadow: 0 4px 14px rgba(22,163,74,0.3);
 }
-.submit-btn:hover { background: #15803D; }
+.submit-btn:hover { background: #15803D; transform: translateY(-1px); }
+.submit-btn:active { transform: translateY(0); }
 .submit-trust {
-text-align:center; font-size: 14px; color: #6B7280; font-weight: 600;
-display: flex; align-items:center; justify-content:center; gap: 6px;
+text-align:center; font-size: 13px; color: #9CA3AF; font-weight: 500;
+display: flex; align-items:center; justify-content:center; gap: 8px;
 }
-.trust-dot { width:5px; height:5px; border-radius:50%; background:#D1D5DB; }
+.trust-dot { width:3px; height:3px; border-radius:50%; background:#D1D5DB; }
 
-.contact-pref { margin-bottom: 16px; }
-.contact-pref-label { font-size: 13px; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; display:block; }
+.contact-pref { margin-bottom: 18px; }
+.contact-pref-label {
+font-size: 14px; font-weight: 600; color: #111827;
+text-transform: none; letter-spacing: 0; margin-bottom: 8px; display:block;
+}
 .pref-options { display:flex; gap:8px; }
 .pref-btn {
-flex:1; background: #F9FAFB; border: 1.5px solid #D1D5DB; border-radius: 8px;
-padding: 12px 8px; font-size: 14px; font-weight: 700; color: #6B7280;
-cursor:pointer; text-align:center; transition: all 0.15s;
+flex:1; background: #ffffff; border: 1.5px solid #E5E7EB; border-radius: 10px;
+padding: 12px 8px; font-size: 14px; font-weight: 600; color: #6B7280;
+cursor:pointer; text-align:center; transition: all 0.2s;
 font-family: 'Inter', sans-serif;
 }
-.pref-btn:hover { border-color: #9CA3AF; color: #374151; }
-.pref-btn.selected { background: #F0FDF4; border-color: #16A34A; color: #16A34A; }
+.pref-btn:hover { border-color: #D1D5DB; color: #374151; background: #F9FAFB; }
+.pref-btn.selected { background: #F0FDF4; border-color: #16A34A; color: #16A34A; font-weight: 700; }
 
-.consent-wrap { margin-bottom: 18px; }
+.consent-wrap { margin-bottom: 20px; }
 .consent-label {
-display: flex; gap: 10px; align-items: flex-start;
+display: flex; gap: 12px; align-items: flex-start;
 cursor: pointer;
 }
 .consent-check {
 width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;
 accent-color: #16A34A; cursor: pointer;
-background: #F9FAFB; border: 2px solid #D1D5DB;
-border-radius: 4px; padding: 0;
 -webkit-appearance: checkbox; appearance: checkbox;
 }
 .consent-label span {
-font-size: 14px; color: #4B5563; line-height: 1.55;
--webkit-text-fill-color: #4B5563;
+font-size: 13px; color: #6B7280; line-height: 1.6;
+-webkit-text-fill-color: #6B7280;
+text-transform: none; letter-spacing: 0; font-weight: 400;
 }
-.consent-link { color: #16A34A; text-decoration: underline; font-weight: 600; }
-.consent-error { color: #EF4444; font-size: 14px; margin-top: 6px; display: none; }
+.consent-link { color: #16A34A; text-decoration: underline; font-weight: 500; }
+.consent-error { color: #EF4444; font-size: 13px; margin-top: 6px; display: none; }
 .consent-error.show { display: block; }
-.success { display:none; }
+.success { display:none; text-align: center; padding: 12px 0; }
 .success.show { display:block; }
-.success-mark { font-size:48px; color:#16A34A; margin-bottom:12px; }
-.success-h { font-size:28px; font-weight:900; color:#111827; margin-bottom:6px; letter-spacing:-0.5px; }
-.success-p { font-size:16px; color:#6B7280; line-height:1.6; margin-bottom: 20px; }
+.success-mark { font-size:52px; color:#16A34A; margin-bottom:14px; }
+.success-h { font-size:28px; font-weight:900; color:#111827; margin-bottom:8px; letter-spacing:-0.5px; }
+.success-p { font-size:16px; color:#6B7280; line-height:1.6; margin-bottom: 24px; }
 .success-next {
-background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px;
-padding: 18px 18px; text-align:left;
+background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 12px;
+padding: 20px; text-align:left;
 }
-.success-next-title { font-size: 12px; font-weight: 700; color: #16A34A; text-transform:uppercase; letter-spacing:1px; margin-bottom: 10px; }
-.success-step { display:flex; gap:10px; align-items:flex-start; margin-bottom:8px; font-size:15px; color:#374151; }
+.success-next-title { font-size: 12px; font-weight: 700; color: #16A34A; text-transform:uppercase; letter-spacing:1px; margin-bottom: 12px; }
+.success-step { display:flex; gap:10px; align-items:flex-start; margin-bottom:10px; font-size:15px; color:#374151; line-height: 1.5; }
 .success-step:last-child { margin-bottom:0; }
-.success-step-n { width:20px; height:20px; border-radius:5px; background:#16A34A; color:#fff; font-size:10px; font-weight:900; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+.success-step-n { width:22px; height:22px; border-radius:6px; background:#16A34A; color:#fff; font-size:11px; font-weight:900; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
 
 /* FAQ */
 .faq-sec { padding: 56px 20px; max-width:680px; margin:0 auto; }
@@ -841,17 +860,18 @@ color: #ffffff; line-height: 1.15; margin-bottom: 8px;
 <div class="form-sec" id="register">
   <div class="form-inner">
     <div class="sec-label-light">Early Access</div>
-    <h2>Limited places before national launch.</h2>
-    <p class="form-sub">We're onboarding a select group of professional fitters before we go nationwide.</p>
+    <h2>Secure your spot before national launch.</h2>
+    <p class="form-sub">We're onboarding a select group of professional fitters region by region. Takes 60 seconds.</p>
     <div class="early-benefit">
-      <strong>Early access fitters get:</strong> Priority onboarding with a dedicated setup call · First access when we go live in your region · Input into features before public launch
+      <strong>Early access fitters get:</strong>
+      Priority onboarding with a dedicated setup call · First access when we go live in your area · Input into features before public launch
     </div>
     <div class="form-box">
       <div id="form-fields">
-        <div class="fg"><label>Your Name</label><input id="fname" type="text" placeholder="Dave Smith"></div>
-        <div class="fg"><label>Mobile Number</label><input id="fmob" type="tel" placeholder="07700 900000"></div>
+        <div class="fg"><label>Your name</label><input id="fname" type="text" placeholder="e.g. Dave Smith"></div>
+        <div class="fg"><label>Mobile number</label><input id="fmob" type="tel" placeholder="e.g. 07700 900000"></div>
         <div class="fg">
-          <label>How many jobs do you do per month?</label>
+          <label>Jobs per month</label>
           <select id="fjobs">
             <option value="" disabled selected>Select a range</option>
             <option>1–20 jobs</option>
@@ -861,7 +881,7 @@ color: #ffffff; line-height: 1.15; margin-bottom: 8px;
           </select>
         </div>
         <div class="contact-pref">
-          <span class="contact-pref-label">How would you like us to contact you?</span>
+          <span class="contact-pref-label">Preferred contact method</span>
           <div class="pref-options">
             <button type="button" class="pref-btn selected" onclick="selectPref(this, 'whatsapp')">WhatsApp</button>
             <button type="button" class="pref-btn" onclick="selectPref(this, 'sms')">SMS</button>
@@ -872,7 +892,7 @@ color: #ffffff; line-height: 1.15; margin-bottom: 8px;
         <div class="fg consent-wrap">
           <label class="consent-label">
             <input type="checkbox" id="fconsent" class="consent-check">
-            <span>I agree to be contacted by TYRE-FIT about early access and the app launch. We will never share your details with third parties. View our <a href="/privacy-policy" class="consent-link">Privacy Policy</a>.</span>
+            <span>I agree to be contacted by TYRE-FIT about early access and the app launch. We will never share your details. <a href="/privacy-policy" class="consent-link">Privacy Policy</a>.</span>
           </label>
         </div>
         <div class="submit-wrap">
@@ -882,7 +902,7 @@ color: #ffffff; line-height: 1.15; margin-bottom: 8px;
             <div class="trust-dot"></div>
             <span>No commitment</span>
             <div class="trust-dot"></div>
-            <span>We'll text you before launch</span>
+            <span>60 seconds to register</span>
           </div>
         </div>
       </div>
